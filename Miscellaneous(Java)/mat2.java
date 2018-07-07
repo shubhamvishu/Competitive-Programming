@@ -1,6 +1,6 @@
-//MIN-COST PATH (WITH RIGHT AND DOWN MOVEMENT)
+//MIN-COST PATH (WITH RIGHT ,DOWN AND DIAGONAL MOVEMENT)
 
-package mat;
+package mat2;
 
 import java.util.Scanner;
 
@@ -17,31 +17,33 @@ public class mat {
 
 		if(memo[i][j]==0)
 	  {
+
 	     int sum=a[i][j];
 
 		if((i+1)<m && (j+1)>=n)
-        {
+			{
 			sum+=mincost(a,i+1,j);
 
-        }
+			}
 		else if((i+1)>=m && (j+1)<n)
-        {
+			{
 			sum+=mincost(a,i,j+1);
-        }
+			}
 		else if((i+1)<m && (j+1)<n)
 		{
 
-			int min;
+			int min=0;
 			int x=mincost(a,i+1,j);
 			int y=mincost(a,i,j+1);
+			int z=mincost(a,i+1,j+1);
 			min=(x<=y)?x:y;
+			min=(z<=min)?z:min;
 			sum+=min;
 		}
 
 		memo[i][j]=sum;
 		return memo[i][j];
 	  }
-
 		else {
 
 			return memo[i][j];
@@ -73,5 +75,4 @@ public class mat {
 		System.out.println("Minimum-cost="+mcost);
 
 	}
-
 }
