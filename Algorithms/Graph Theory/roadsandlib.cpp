@@ -1,3 +1,5 @@
+//https://www.hackerrank.com/challenges/torque-and-development/problem
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -23,7 +25,7 @@ void dfs(int i)
     }
     }
 }
-// Complete the roadsAndLibraries function below.
+
 long roadsAndLibraries(int n, int c_lib, int c_road, vector<vector<int>> cities) {
 path.resize(n);
 path={{0}};
