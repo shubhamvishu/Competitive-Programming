@@ -1,6 +1,8 @@
+
 //https://practice.geeksforgeeks.org/problems/longest-even-length-substring/0
 
-#include <iostream>
+
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
@@ -13,7 +15,7 @@ int main() {
 		cin>>str;
 		int sum=0;
 		vector<int>v1(str.length()+1,0);
-		for(int j=1;j<=str.length();SSSj++)
+		for(int j=1;j<=str.length();j++)
 		{
 			v1[j]=v1[j-1]+(str[j-1]-'0');
 	
