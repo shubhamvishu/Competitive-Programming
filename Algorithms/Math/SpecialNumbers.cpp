@@ -1,3 +1,5 @@
+//https://www.hackerearth.com/challenges/competitive/mock-online-coding-assessments-c-easy/algorithm/ozs-cool-numbers-a97d4b77/
+
 #include<bits/stdc++.h>
 using namespace std;
 unsigned long maxl;
