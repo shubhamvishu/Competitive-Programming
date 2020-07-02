@@ -1,0 +1,169 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\froman\fcharset0 Times-Bold;\f1\froman\fcharset0 Times-Roman;\f2\froman\fcharset0 Times-Italic;
+\f3\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red109\green109\blue109;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c50196\c50196\c50196;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0\b\fs56 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Nesting Depth
+\f1\b0\fs24 \
+\
+
+\f0\b\fs28 \
+\pard\pardeftab720\sl340\sa280\partightenfactor0
+\cf2 Problem\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf2 tl;dr: Given a string of digits 
+\f0\b S
+\f1\b0 , insert a minimum number of opening and closing parentheses into it such that the resulting string is balanced and each digit d is inside exactly d pairs of matching parentheses. \
+Let the 
+\f2\i nesting
+\f1\i0  of two parentheses within a string be the substring that occurs strictly between them. An opening parenthesis and a closing parenthesis that is further to its right are said to 
+\f2\i match
+\f1\i0  if their nesting is empty, or if every parenthesis in their nesting matches with another parenthesis in their nesting. The 
+\f2\i nesting depth
+\f1\i0  of a position p is the number of pairs of matching parentheses m such that p is included in the nesting of m. \
+For example, in the following strings, all digits match their nesting depth: 
+\f3 0((2)1)
+\f1 , 
+\f3 (((3))1(2))
+\f1 , 
+\f3 ((((4))))
+\f1 , 
+\f3 ((2))((2))(1)
+\f1 . The first three strings have minimum length among those that have the same digits in the same order, but the last one does not since 
+\f3 ((22)1)
+\f1  also has the digits 
+\f3 221
+\f1  and is shorter. \
+Given a string of digits 
+\f0\b S
+\f1\b0 , find another string S', comprised of parentheses and digits, such that: \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl280\partightenfactor0
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 all parentheses in S' match some other parenthesis,\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 removing any and all parentheses from S' results in 
+\f0\b S
+\f1\b0 ,\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 each digit in S' is equal to its nesting depth, and\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 S' is of minimum length.\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl340\sa280\partightenfactor0
+
+\f0\b\fs28 \cf2 Input\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf2 The first line of the input gives the number of test cases, 
+\f0\b T
+\f1\b0 . 
+\f0\b T
+\f1\b0  lines follow. Each line represents a test case and contains only the string 
+\f0\b S
+\f1\b0 . \
+\pard\pardeftab720\sl340\sa280\partightenfactor0
+
+\f0\b\fs28 \cf2 Output\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf2 For each test case, output one line containing 
+\f3 Case #x: y
+\f1 , where 
+\f3 x
+\f1  is the test case number (starting from 1) and 
+\f3 y
+\f1  is the string S' defined above. \
+\pard\pardeftab720\sl340\sa280\partightenfactor0
+
+\f0\b\fs28 \cf2 Limits\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf2 Time limit: 20 seconds per test set.\uc0\u8232 Memory limit: 1GB.\u8232 1 \u8804  
+\f0\b T
+\f1\b0  \uc0\u8804  100.\u8232 1 \u8804  length of 
+\f0\b S
+\f1\b0  \uc0\u8804  100.\u8232 \
+\pard\pardeftab720\sl280\sa319\partightenfactor0
+
+\f0\b \cf2 Test set 1 (Visible Verdict)\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f1\b0 \cf2 Each character in 
+\f0\b S
+\f1\b0  is either 
+\f3 0
+\f1  or 
+\f3 1
+\f1 .\uc0\u8232 \
+\pard\pardeftab720\sl280\sa319\partightenfactor0
+
+\f0\b \cf2 Test set 2 (Visible Verdict)\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f1\b0 \cf2 Each character in 
+\f0\b S
+\f1\b0  is a decimal digit between 
+\f3 0
+\f1  and 
+\f3 9
+\f1 , inclusive.\uc0\u8232 \
+\pard\pardeftab720\sl340\sa280\partightenfactor0
+
+\f0\b\fs28 \cf2 Sample\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth864\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth2448\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl280\partightenfactor0
+
+\f1\b0\fs24 \cf2 \
+Input \
+\'a0 \cell 
+\pard\intbl\itap1\pardeftab720\sl280\partightenfactor0
+\cf2 \
+Output \
+\'a0 \cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth864\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth2448\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl280\partightenfactor0
+
+\f3 \cf2 4\
+0000\
+101\
+111000\
+1\
+\
+  \cell 
+\pard\intbl\itap1\pardeftab720\sl280\partightenfactor0
+\cf2 Case #1: 0000\
+Case #2: (1)0(1)\
+Case #3: (111)000\
+Case #4: (1)\
+\
+  \cell \lastrow\row
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f1 \cf2 The strings 
+\f3 ()0000()
+\f1 , 
+\f3 (1)0(((()))1)
+\f1  and 
+\f3 (1)(11)000
+\f1  are not valid solutions to Sample Cases #1, #2 and #3, respectively, only because they are not of minimum length. In addition, 
+\f3 1)(
+\f1  and 
+\f3 )(1
+\f1  are not valid solutions to Sample Case #4 because they contain unmatched parentheses and the nesting depth is 0 at the position where there is a 1. \
+You can create sample inputs that are valid only for Test Set 2 by removing the parentheses from the example strings mentioned in the problem statement. \
+}

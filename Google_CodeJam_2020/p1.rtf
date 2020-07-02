@@ -1,0 +1,153 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\froman\fcharset0 Times-Bold;\f1\froman\fcharset0 Times-Roman;\f2\froman\fcharset0 Times-Italic;
+\f3\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red109\green109\blue109;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c50196\c50196\c50196;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0\b\fs56 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Vestigium
+\f1\b0 \
+
+\f0\b\fs28 \
+\pard\pardeftab720\sl340\sa280\partightenfactor0
+\cf2 Problem\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf2 Vestigium means "trace" in Latin. In this problem we work with Latin squares and matrix traces. \
+The 
+\f2\i trace
+\f1\i0  of a square matrix is the sum of the values on the main diagonal (which runs from the upper left to the lower right). \
+An 
+\f0\b N
+\f1\b0 -by-
+\f0\b N
+\f1\b0  square matrix is a 
+\f2\i Latin square
+\f1\i0  if each cell contains one of 
+\f0\b N
+\f1\b0  different values, and no value is repeated within a row or a column. In this problem, we will deal only with "natural Latin squares" in which the 
+\f0\b N
+\f1\b0  values are the integers between 1 and 
+\f0\b N
+\f1\b0 . \
+Given a matrix that contains only integers between 1 and 
+\f0\b N
+\f1\b0 , we want to compute its trace and check whether it is a natural Latin square. To give some additional information, instead of simply telling us whether the matrix is a natural Latin square or not, please compute the number of rows and the number of columns that contain repeated values. \
+\pard\pardeftab720\sl340\sa280\partightenfactor0
+
+\f0\b\fs28 \cf2 Input\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf2 The first line of the input gives the number of test cases, 
+\f0\b T
+\f1\b0 . 
+\f0\b T
+\f1\b0  test cases follow. Each starts with a line containing a single integer 
+\f0\b N
+\f1\b0 : the size of the matrix to explore. Then, 
+\f0\b N
+\f1\b0  lines follow. The i-th of these lines contains 
+\f0\b N
+\f1\b0  integers 
+\f0\b M
+\fs20 \sub i,1
+\f1\b0\fs24 \nosupersub , 
+\f0\b M
+\fs20 \sub i,2
+\f1\b0\fs24 \nosupersub  ..., 
+\f0\b M
+\fs20 \sub i,N
+\f1\b0\fs24 \nosupersub . 
+\f0\b M
+\fs20 \sub i,j
+\f1\b0\fs24 \nosupersub  is the integer in the i-th row and j-th column of the matrix. \
+\pard\pardeftab720\sl340\sa280\partightenfactor0
+
+\f0\b\fs28 \cf2 Output\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf2 For each test case, output one line containing 
+\f3 Case #x: k r c
+\f1 , where 
+\f3 x
+\f1  is the test case number (starting from 1), 
+\f3 k
+\f1  is the trace of the matrix, 
+\f3 r
+\f1  is the number of rows of the matrix that contain repeated elements, and 
+\f3 c
+\f1  is the number of columns of the matrix that contain repeated elements. \
+\pard\pardeftab720\sl340\sa280\partightenfactor0
+
+\f0\b\fs28 \cf2 Limits\
+\pard\pardeftab720\sl280\sa319\partightenfactor0
+
+\fs24 \cf2 Test set 1 (Visible Verdict)\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f1\b0 \cf2 Time limit: 20 seconds per test set.\uc0\u8232 Memory limit: 1GB.\u8232 1 \u8804  
+\f0\b T
+\f1\b0  \uc0\u8804  100.\u8232 2 \u8804  
+\f0\b N
+\f1\b0  \uc0\u8804  100.\u8232 1 \u8804  
+\f0\b M
+\fs20 \sub i,j
+\f1\b0\fs24 \nosupersub  \uc0\u8804  
+\f0\b N
+\f1\b0 , for all i, j.\uc0\u8232 \
+\pard\pardeftab720\sl340\sa280\partightenfactor0
+
+\f0\b\fs28 \cf2 Sample\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth1008\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth2016\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl280\partightenfactor0
+
+\f1\b0\fs24 \cf2 \
+Input \
+\'a0 \cell 
+\pard\intbl\itap1\pardeftab720\sl280\partightenfactor0
+\cf2 \
+Output \
+\'a0 \cell \row
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth1008\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth2016\clftsWidth3 \clmart10 \clmarl10 \clmarb10 \clmarr10 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt20 \clpadl20 \clpadb20 \clpadr20 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl280\partightenfactor0
+
+\f3 \cf2 3\
+4\
+1 2 3 4\
+2 1 4 3\
+3 4 1 2\
+4 3 2 1\
+4\
+2 2 2 2\
+2 3 2 3\
+2 2 2 3\
+2 2 2 2\
+3\
+2 1 3\
+1 3 2\
+1 2 3\
+\
+  \cell 
+\pard\intbl\itap1\pardeftab720\sl280\partightenfactor0
+\cf2 Case #1: 4 0 0\
+Case #2: 9 4 4\
+Case #3: 8 0 2\
+\
+  \cell \lastrow\row
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f1 \cf2 In Sample Case #1, the input is a natural Latin square, which means no row or column has repeated elements. All four values in the main diagonal are 1, and so the trace (their sum) is 4. \
+In Sample Case #2, all rows and columns have repeated elements. Notice that each row or column with repeated elements is counted only once regardless of the number of elements that are repeated or how often they are repeated within the row or column. In addition, notice that some integers in the range 1 through 
+\f0\b N
+\f1\b0  may be absent from the input. \
+In Sample Case #3, the leftmost and rightmost columns have repeated elements. \
+}

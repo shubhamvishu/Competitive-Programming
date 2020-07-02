@@ -1,0 +1,62 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 #include<bits/stdc++.h>\
+using namespace std;\
+string removeZero(string);\
+string addpara(string temp)\{\
+    int minn=INT_MAX;\
+    string str="";\
+    for(int i=0;i<temp.length();i++)\{\
+        if(temp[i]-'0'<minn)\{\
+           minn=temp[i]-'0';\
+        \}\
+    \}\
+    for(int i=0;i<minn;i++) str+="(";\
+    for(int i=0;i<temp.length();i++)\
+        temp[i]=temp[i]-minn;\
+    str+=removeZero(temp);\
+    for(int i=0;i<minn;i++) str+=")";\
+    return str;\
+\}\
+string removeZero(string s)\{\
+        int i=0;\
+        string str="";\
+        while(i<s.length())\{\
+            string temp="";\
+            while(s.substr(i,1)=="0")\{\
+                str+="0";\
+                i++;\
+            \}\
+            while(i<s.length() && s.substr(i,1)!="0")\{\
+                temp.append(s.substr(i,1));\
+                i++;\
+            \}\
+            if(temp!="")\
+            str+=addpara(temp);\
+        \}\
+        return str;\
+\}\
+int main()\{\
+    long t,t1;\
+    string s;\
+    cin>>t;\
+    t1=t;\
+    while(t--)\{\
+        cin>>s;\
+        string str="";\
+        str=removeZero(s);\
+        int i=0,j=0;\
+        while(i<str.length())\{\
+        	if(str[i]=='0')\{\
+        		str[i]=s[j++];\
+        	\}\
+        	i++;\
+        \}\
+        cout<<"Case #"<<(t1-t)<<": "<<str<<endl;\
+    \}\
+\}}
